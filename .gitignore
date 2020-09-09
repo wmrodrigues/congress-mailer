@@ -16,6 +16,7 @@
 
 .idea/
 
-config.json
+settings.json
+test.csv
 
 mailer
