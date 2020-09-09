@@ -15,3 +15,8 @@
 # vendor/
 
 .idea/
+
+settings.json
+test.csv
+
+mailer
