@@ -14,8 +14,8 @@ type Sender struct {
 }
 
 // NewSender
-func NewSender(setingsFile structs.Settings) *Sender {
-	return &Sender{settings: setingsFile}
+func NewSender(settingsFile structs.Settings) *Sender {
+	return &Sender{settings: settingsFile}
 }
 
 // SetRecipients
@@ -24,12 +24,15 @@ func (s *Sender) SetRecipients(r []structs.Recipient) {
 }
 
 func (s *Sender) sendMail(recipient structs.Recipient) {
+	_smtp := s.settings.Smtp
+
 	message := []byte(fmt.Sprintf("To: %s\r\n", recipient.EmailAddress) +
 		"Subject: Solicitação importante\r\n" +
+		fmt.Sprintf("From: %s\r\n", _smtp.From) +
 		"\r\n" +
 		fmt.Sprintf("%s %s, bom dia! \nVenho através deste exercer o meu direito de cidadão solicitar que V.Ex.a assine a emenda anti privilegio do Exmo. Senhor Deputado Kim Kataguiri.\r\n\n\n\nMinha sincera gratidão por Vossa atenção", recipient.Treatment, recipient.Name))
+
 	to := []string{recipient.EmailAddress}
-	_smtp := s.settings.Smtp
 	auth := smtp.PlainAuth("", _smtp.Username, _smtp.Password, _smtp.Host)
 	smtAddres := fmt.Sprintf("%s:%d", _smtp.Host, _smtp.Port)
 	err := smtp.SendMail(smtAddres, auth, _smtp.From, to, message)
