@@ -17,6 +17,7 @@
 .idea/
 
 settings.json
-test.csv
+message.template
+file.csv
 
 mailer

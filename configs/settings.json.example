@@ -5,5 +5,8 @@
     "username": "username@gmail.com",
     "password": "yourTopSecretPassword",
     "from": "Your Awesome Nome"
+  },
+  "mail": {
+    "subject": "My awesome subject"
   }
 }
