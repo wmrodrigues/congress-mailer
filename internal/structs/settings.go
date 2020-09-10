@@ -8,4 +8,7 @@ type Settings struct {
 		Password string `json:"password"`
 		From     string `json:"from"`
 	} `json:"smtp"`
+	Mail struct {
+		Subject string `json:"subject"`
+	} `json:"mail"`
 }
