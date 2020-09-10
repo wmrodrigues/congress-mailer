@@ -2,4 +2,3 @@ You can put in here what ever you want and use the struct properties like:
 * {{.Treatment}}
 * {{.Name}}
 * {{.EmailAddress}}
-* Complement

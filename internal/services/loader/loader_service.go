@@ -36,8 +36,7 @@ func LoadFromCsvFile(filePath string) ([]structs.Recipient, error)  {
 
 		recipients = append(recipients, structs.Recipient{Name: line[0],
 			EmailAddress: line[1],
-			Treatment:    line[2],
-			Complement:   line[3]})
+			Treatment:    line[2]})
 	}
 
 	return recipients, nil
